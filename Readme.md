@@ -44,7 +44,7 @@ java -jar target/http-proxy.jar \
 | `--capture.dir` | 事务文件输出目录 | `./capture` |
 | `--capture.max-body` | 内联到文本的 body 上限（字节），超出写入 `.bin` | `1048576` |
 | `--authorize` | 是否注入 Basic 认证 | `false` |
-| `--username` / `--password` | Basic 认证凭据 | - |
+| `--username` / `--password` | Basic 认证凭据，也可用环境变量 `PROXY_USERNAME` / `PROXY_PASSWORD` 提供 | - |
 
 ## 注意事项
 

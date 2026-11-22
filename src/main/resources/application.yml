@@ -6,9 +6,11 @@ forward:
   url: http://127.0.0.1:7080
 
 # Optional Basic authentication injected into forwarded requests.
-authorize: false
-username: ADMIN
-password: KYLIN@123
+# Credentials are read from the environment so that they are never committed:
+#   PROXY_AUTHORIZE=true PROXY_USERNAME=... PROXY_PASSWORD=...
+authorize: ${PROXY_AUTHORIZE:false}
+username: ${PROXY_USERNAME:}
+password: ${PROXY_PASSWORD:}
 
 # Where each captured request/response transaction is written, and the max body size
 # (bytes) that is inlined into the text file before spilling to a side-car .bin file.
